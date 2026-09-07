@@ -5,8 +5,9 @@ Shared local base directory for isolated
 
 Each mutable task gets a full clone directly under this repository, named
 `at-<feature-branch>`. Only the submodules needed by that task are initialized.
-The clones are ignored by git; this repository tracks only the shared operating
-instructions.
+This repository tracks only the shared operating instructions; `.gitignore` is a
+whitelist, so clones, task files, logs, and any other scratch state live here as
+plain files without being committed. Put working files here, not in `/tmp`.
 
 Example:
 

@@ -1,1 +1,5 @@
-/at-*
+# Whitelist: the workspace tracks only its shared instructions. Everything else — clones, scratch files, logs — is local.
+*
+!.gitignore
+!AGENTS.md
+!README.md
