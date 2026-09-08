@@ -10,7 +10,7 @@ rules, not product code.
   `at-<feature-branch>`.
 - Use slash-free feature branch names, for example `issue-8-workspace`, so the
   clone is `at-issue-8-workspace`.
-- Use a full clone. Initialize only the tool submodules required by the task.
+- Use a full clone, without `--filter=blob:none`, for the umbrella and its submodules: the standards ratchet reads repositories through `git2`, which cannot lazy-fetch promisor objects and fails with `object not found` in a partial clone. Initialize only the tool submodules required by the task.
 - Never use worktrees for these task directories.
 - One agent session owns one mutable clone. Never edit a clone owned by another
   session, even when its agent appears idle.
